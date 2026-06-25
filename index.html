@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Guessing Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <header class="game-header">
+      <h1>Number guessing game</h1>
+    </header>
+
+    <main class="game-card">
+      <p class="instruction-main">Try and guess a random number between 1 and 100.</p>
+      <p class="instruction-sub">You have 10 attempts to guess the right number.</p>
+
+      <div class="display-area">
+        <h2 id="feedback-msg">Guess a number</h2>
+      </div>
+      <form id="guess-form" class="guess-form" onsubmit="return false;">
+        <div class="input-wrapper">
+          <input 
+            type="number" 
+            id="guess-input" 
+            placeholder="69" 
+            min="1" 
+            max="100" 
+            required 
+            autocomplete="off"
+            aria-label="Enter your guess"
+          >
+        </div>
+        <button type="submit" id="submit-btn" class="btn-submit">Submit guess</button>
+      </form>
+
+      <div class="stats-panel">
+        <div class="stat-item previous-guesses-container">
+          <span class="stat-label">Previous Guesses:</span>
+          <div id="previous-guesses" class="guesses-list">
+          </div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Guesses Remaining:</span>
+          <span id="remaining-count" class="stat-value">10</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Last Guess was:</span>
+          <span id="guess-status" class="stat-value">—</span>
+        </div>
+      </div>
+
+      <div id="result-display" class="result-display hidden"></div>
+      <button id="restart-btn" class="btn-restart hidden">Play Again</button>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
